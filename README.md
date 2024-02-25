@@ -1,3 +1,3 @@
-# flutter_bloc_fakestoreapi
+# tezda_bloc_fakestoreapi
 
 Hello
