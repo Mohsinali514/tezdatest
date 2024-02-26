@@ -10,7 +10,7 @@ class ProductList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
-    final double itemHeight = (size.height) / 3;
+    final double itemHeight = (size.height) / 2.8;
     final double itemWidth = size.width / 2;
     return products.isEmpty
         ? const NotFound(message: 'Product Not Found')
