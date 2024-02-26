@@ -42,7 +42,7 @@ class _LoginPageState extends State<LoginPage> {
             return ListView(
               padding: const EdgeInsets.all(24.0),
               children: [
-                verticalSpace(100),
+                verticalSpace(60),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -54,12 +54,12 @@ class _LoginPageState extends State<LoginPage> {
                         color: Colors.black,
                         fontStyle: FontStyle.italic,
                         fontWeight: FontWeight.bold,
-                        fontSize: 40,
+                        fontSize: 50,
                       ),
                     )
                   ],
                 ),
-                verticalSpace(5),
+                //verticalSpace(10),
                 const Text(
                   'Your Gateway to an Immersive Shopping Experience',
                   textAlign: TextAlign.center,
@@ -69,7 +69,7 @@ class _LoginPageState extends State<LoginPage> {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                verticalSpace(60),
+                verticalSpace(50),
                 MyTextField(
                   labelText: 'Email',
                   textInputType: TextInputType.emailAddress,
@@ -111,7 +111,7 @@ class _LoginPageState extends State<LoginPage> {
                             'Sign In',
                             style: TextStyle(
                                 color: Colors.white,
-                                fontWeight: FontWeight.w700),
+                                fontWeight: FontWeight.bold),
                           ),
                           ontap: () {
                             if (emailController.text.isNotEmpty &&
@@ -126,14 +126,14 @@ class _LoginPageState extends State<LoginPage> {
                           },
                         ),
                       ),
-                verticalSpace(25),
-                MyButton(
-                  ontap: () => context.push('/signup'),
+                verticalSpace(20),
+                TextButton(
+                  onPressed: () => context.push('/signup'),
                   child: const Text(
-                    "Didn't have any account? Register",
+                    "Didn't have any account? Register Now",
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      color: darkGrey,
+                      color: Colors.green,
                       fontWeight: FontWeight.bold,
                     ),
                   ),

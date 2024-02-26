@@ -1,3 +1,4 @@
 # tezda_bloc_fakestoreapi
 
-Hello
+Tezda Test Application
+

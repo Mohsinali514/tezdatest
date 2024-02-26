@@ -4,6 +4,7 @@ import 'package:flutter_bloc_fakestoreapi/presentation/misc/constants.dart';
 import 'package:flutter_bloc_fakestoreapi/presentation/misc/methods.dart';
 import 'package:flutter_bloc_fakestoreapi/presentation/widgets/mybutton.dart';
 import 'package:flutter_bloc_fakestoreapi/presentation/widgets/mytextfield.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../bloc/auth/auth_bloc.dart';
 
@@ -46,33 +47,34 @@ class _SignupPageState extends State<SignupPage> {
             return ListView(
               padding: const EdgeInsets.all(24.0),
               children: [
-                verticalSpace(100),
+                verticalSpace(40),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image.asset('assets/logo.png'),
                     horizontalSpace(10),
                     const Text(
-                      'Shop IT',
+                      'tezda',
                       style: TextStyle(
-                        color: lightGreen,
+                        color: Colors.black,
+                        fontStyle: FontStyle.italic,
                         fontWeight: FontWeight.bold,
-                        fontSize: 30,
+                        fontSize: 50,
                       ),
                     )
                   ],
                 ),
-                verticalSpace(5),
+                // verticalSpace(5),
                 const Text(
-                  'Shop from our stores with ease',
+                  'Your Gateway to an Immersive Shopping Experience',
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    fontSize: 16,
-                    color: grey,
+                    fontSize: 12,
+                    color: Colors.black54,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                verticalSpace(100),
+                verticalSpace(40),
                 MyTextField(
                   labelText: 'Name',
                   textInputType: TextInputType.name,
@@ -102,25 +104,18 @@ class _SignupPageState extends State<SignupPage> {
                     color: darkGrey,
                   ),
                 ),
-                verticalSpace(20),
-                const Align(
-                  alignment: Alignment.centerRight,
-                  child: Text(
-                    'Forgot Password?',
-                    style: TextStyle(
-                      color: darkGrey,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                verticalSpace(25),
+                verticalSpace(30),
                 state is AuthLoading
                     ? const Center(child: CircularProgressIndicator())
                     : SizedBox(
                   width: double.infinity,
                   height: 48,
                   child: MyButton(
-                    child: const Text('Sign Up'),
+                    child: const Text('REGISTER',
+                      style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    ),),
                     ontap: () {
                       if (emailController.text.isNotEmpty &&
                           passwordController.text.isNotEmpty) {
@@ -138,16 +133,21 @@ class _SignupPageState extends State<SignupPage> {
                     },
                   ),
                 ),
-                verticalSpace(25),
-                const Text(
-                  'Already have an account? Sign In Here',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: darkGrey,
-                    fontWeight: FontWeight.bold,
+                verticalSpace(20),
+                TextButton(
+                  onPressed: () => context.push('/login'),
+                  child: const Text(
+                    "Already have an account? Login Here",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Colors.green,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 )
+
               ],
+
             );
           },
         ),
